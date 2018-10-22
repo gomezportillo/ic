@@ -1,0 +1,2 @@
+# ic
+Computational intelligence project
