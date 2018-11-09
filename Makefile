@@ -1,5 +1,5 @@
 PYTHON3 := $(shell command -v python3 2> /dev/null)
-
+PIP3		:= $(pip3)
 all: run
 
 run:
@@ -10,7 +10,7 @@ endif
 
 install:
 	apt-get install python3 python3-pip python3-tk graphviz
-	pip3 install -r requirements.txt
+	$(PIP3) install -r requirements.txt
 
 clean:
 	find . -name '*__pycache__' -exec rm -vrf {} \;

@@ -1,5 +1,4 @@
-keras
-tensorflow
-matplotlib
-pydot
-
+Keras==2.2.4
+tensorflow==1.11.0
+matplotlib==3.0.0
+pydot==1.2.4
