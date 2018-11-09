@@ -8,7 +8,7 @@ from keras import backend
 print("Using TensorFlow v{}".format(tf.__version__))
 
 # Helper libraries
-import numpy as np
+import numpy
 import matplotlib.pyplot as plt
 import time
 
@@ -35,6 +35,7 @@ LAYER_1 = keras.layers.Flatten(input_shape=(28, 28))
 LAYER_2 = keras.layers.Dense(NODES_DENSE_1, activation=tf.nn.relu)
 LAYER_3 = keras.layers.Dense(NODES_DENSE_2, activation=tf.nn.softmax)
 
+# https://keras.io/models/sequential/
 model = keras.Sequential([ LAYER_1, LAYER_2, LAYER_3 ])
 
 # Compiling the model
@@ -66,3 +67,8 @@ acc = 'Test accuracy: {}%'.format(test_acc*100)
 loss = 'Test loss: {}%'.format(test_loss*100)
 print(acc)
 print(loss)
+
+# Predicting the classes of all test images
+prediction = model.predict(test_images)
+result = numpy.argmax(prediction, axis=-1)
+print(result)
