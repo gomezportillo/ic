@@ -10,6 +10,7 @@ print("Using TensorFlow v{}".format(tf.__version__))
 # Helper libraries
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
 #Local libraries
 from aux import render_image
@@ -43,9 +44,25 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
 
 # Train the model with the train images
 EPOCHS = 5
+
+start = time.time()
 model.fit(train_images, train_labels, epochs=EPOCHS)
+end = time.time()
+print("Training time: {}s".format(end - start))
+
+# Evaluate the accuracy of the model with the train images
+train_loss, train_acc = model.evaluate(train_images, train_labels)
+acc = 'Train accuracy: {}%'.format(train_acc*100)
+loss = 'Train loss: {}%'.format(train_loss*100)
+print(acc)
+print(loss)
+
+score = model.evaluate(train_images, train_labels)
+print(score)
 
 # Evaluate the accuracy of the model with the test images
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 acc = 'Test accuracy: {}%'.format(test_acc*100)
+loss = 'Test loss: {}%'.format(test_loss*100)
 print(acc)
+print(loss)
