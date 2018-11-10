@@ -35,8 +35,10 @@ LAYER_1 = keras.layers.Flatten(input_shape=(28, 28))
 LAYER_2 = keras.layers.Dense(NODES_DENSE_1, activation=tf.nn.relu)
 LAYER_3 = keras.layers.Dense(NODES_DENSE_2, activation=tf.nn.softmax)
 
+LAYERS_SET = [ LAYER_1, LAYER_2, LAYER_3 ]
+
 # https://keras.io/models/sequential/
-model = keras.Sequential([ LAYER_1, LAYER_2, LAYER_3 ])
+model = keras.Sequential( LAYERS_SET )
 
 # Compiling the model
 model.compile(optimizer=tf.train.AdamOptimizer(),
@@ -44,31 +46,53 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               metrics=['accuracy'])
 
 # Train the model with the train images
-EPOCHS = 5
+EPOCHS = 10
 
-start = time.time()
+start_time = time.time()
 model.fit(train_images, train_labels, epochs=EPOCHS)
-end = time.time()
-print("Training time: {}s".format(end - start))
+end_time = time.time()
+train_time_str = "Training time: {}s".format(end_time - start_time)
+print(train_time_str)
 
 # Evaluate the accuracy of the model with the train images
 train_loss, train_acc = model.evaluate(train_images, train_labels)
-acc = 'Train accuracy: {}%'.format(train_acc*100)
-loss = 'Train loss: {}%'.format(train_loss*100)
-print(acc)
-print(loss)
-
-score = model.evaluate(train_images, train_labels)
-print(score)
+train_loss_str = 'Train loss: {}%'.format(train_loss*100)
+train_acc_str = 'Train accuracy: {}%'.format(train_acc*100)
+print(train_loss_str)
+print(train_acc_str)
 
 # Evaluate the accuracy of the model with the test images
 test_loss, test_acc = model.evaluate(test_images, test_labels)
-acc = 'Test accuracy: {}%'.format(test_acc*100)
-loss = 'Test loss: {}%'.format(test_loss*100)
-print(acc)
-print(loss)
+test_acc_str = 'Test accuracy: {}%'.format(test_acc*100)
+test_loss_str = 'Test loss: {}%'.format(test_loss*100)
+print(test_loss_str)
+print(test_acc_str)
 
-# Predicting the classes of all test images
-prediction = model.predict(test_images)
-result = numpy.argmax(prediction, axis=-1)
-print(result)
+filename = 'deliverables/ver_1/result.txt'
+with open(filename, 'w') as f_out:
+    f_out.write(train_time_str + '\n')
+    f_out.write(train_loss_str + '\n')
+    f_out.write(train_acc_str + '\n')
+    f_out.write(test_loss_str + '\n')
+    f_out.write(test_acc_str + '\n')
+
+
+# Predicting the labels of all train images
+predictions = model.predict(train_images)
+assigned_labels = numpy.argmax(predictions, axis=-1)
+# assert len(predictions) == len(test_images)
+
+filename = 'deliverables/ver_1/assigned_labels_train.txt'
+with open(filename, 'w') as f_out:
+    for label in assigned_labels:
+        f_out.write(str(label))
+
+
+# Predicting the labels of all test images
+predictions = model.predict(test_images)
+assigned_labels = numpy.argmax(predictions, axis=-1)
+
+filename = 'deliverables/ver_1/assigned_labels_test.txt'
+with open(filename, 'w') as f_out:
+    for label in assigned_labels:
+        f_out.write(str(label))
