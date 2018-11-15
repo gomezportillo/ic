@@ -41,7 +41,7 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               metrics=['accuracy'])
 
 # Train the model with the train images
-EPOCHS = 10
+EPOCHS = 15
 
 train_time_str = train_model(model, train_images, train_labels, EPOCHS)
 
@@ -53,7 +53,7 @@ train_loss_str, train_acc_str = evaluate_model('Train', model, train_images, tra
 test_loss_str, test_acc_str = evaluate_model('Test', model, test_images, test_labels)
 
 # Save results
-VERSION = 2
+VERSION = 1
 save_results(VERSION, train_time_str, train_loss_str, train_acc_str, test_loss_str, test_acc_str)
 
 # Predicting the labels of all train images

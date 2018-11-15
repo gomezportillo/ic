@@ -1,5 +1,5 @@
-Training time: 24.434173822402954s
-Train loss: 1.0095688432695653%
-Train accuracy: 99.715%
-Test loss: 7.118523045459005%
-Test accuracy: 98.13%
+Training time: 44.04493236541748s
+Train loss: 0.5469098090139475%
+Train accuracy: 99.84833333333333%
+Test loss: 8.559946723893882%
+Test accuracy: 98.00999999999999%
