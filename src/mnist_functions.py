@@ -4,11 +4,17 @@
 import time
 import os
 import numpy
+from keras.utils import plot_model
+
+def print_unique_numbers(TYPE, labels):
+    unique, count= numpy.unique(labels, return_counts=True)
+    print("The number of occuranc of each number in the "+TYPE+" set is %s " % dict (zip(unique, count) ), "\n" )
+
 
 def train_model(model, images, labels, EPOCHS):
     start_time = time.time()
 
-    model.fit(images, labels, epochs=EPOCHS)
+    model.fit(images, labels, epochs=EPOCHS, batch_size=128, validation_data=(images, labels))
 
     end_time = time.time()
     elapsed_time = end_time - start_time
@@ -49,3 +55,10 @@ def predict_labels(VERSION, TYPE, model, images):
     with open(filename, 'w') as f_out:
         for label in assigned_labels:
             f_out.write(str(label))
+
+    return assigned_labels
+
+def save_model_layers_to_file(VERSION, name, model):
+    filename = 'deliverables/ver_{0}/{1}'.format(VERSION, name)
+
+    plot_model(model, to_file=filename)

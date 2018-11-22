@@ -22,13 +22,13 @@ class_names = list(set(train_labels))
 train_images = train_images / 255.0
 test_images = test_images / 255.0
 
-# Building the model
-NODES_DENSE_1 = 128
-NODES_DENSE_2 = 10
+print_unique_numbers('train', train_labels)
+print_unique_numbers('test', test_labels)
 
+# Building the model
 LAYER_1 = keras.layers.Flatten(input_shape=(28, 28))
-LAYER_2 = keras.layers.Dense(NODES_DENSE_1, activation=tf.nn.relu)
-LAYER_3 = keras.layers.Dense(NODES_DENSE_2, activation=tf.nn.softmax)
+LAYER_2 = keras.layers.Dense(128, activation=tf.nn.relu)
+LAYER_3 = keras.layers.Dense(10, activation=tf.nn.softmax)
 
 model = keras.Sequential()
 model.add( LAYER_1 )
@@ -61,3 +61,5 @@ predict_labels(VERSION, 'Train', model, train_images)
 
 # Predicting the labels of all test images
 predict_labels(VERSION, 'Test', model, test_images)
+
+save_model_layers_to_file(VERSION, 'model.png', model)
