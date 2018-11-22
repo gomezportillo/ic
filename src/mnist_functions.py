@@ -8,7 +8,7 @@ from keras.utils import plot_model
 
 def print_unique_numbers(TYPE, labels):
     unique, count= numpy.unique(labels, return_counts=True)
-    print("The number of occuranc of each number in the "+TYPE+" set is %s " % dict (zip(unique, count) ), "\n" )
+    print("The number of occuranc of each number in the {} set is {}\n".format(TYPE, dict (zip(unique, count))))
 
 
 def train_model(model, images, labels, EPOCHS):
@@ -18,15 +18,15 @@ def train_model(model, images, labels, EPOCHS):
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    elapsed_time_str = "Training time: {}s".format(elapsed_time)
+    elapsed_time_str = "Training time: {:.3f}s".format(elapsed_time)
     print(elapsed_time_str)
 
     return elapsed_time_str
 
 def evaluate_model(TYPE, model, images, labels):
     loss, acc = model.evaluate(images, labels)
-    loss_str = '{0} loss: {1}%'.format(str(TYPE), loss*100)
-    acc_str = '{0} accuracy: {1}%'.format(str(TYPE), acc*100)
+    loss_str = '{0} loss: {1:.5f}'.format(TYPE, loss)
+    acc_str = '{0} accuracy: {1:.5f}%'.format(TYPE, acc*100)
     print(loss_str)
     print(acc_str)
 

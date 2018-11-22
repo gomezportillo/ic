@@ -57,9 +57,9 @@ VERSION = 1
 save_results(VERSION, train_time_str, train_loss_str, train_acc_str, test_loss_str, test_acc_str)
 
 # Predicting the labels of all train images
-predict_labels(VERSION, 'Train', model, train_images)
+predict_labels(VERSION, 'train', model, train_images)
 
 # Predicting the labels of all test images
-predict_labels(VERSION, 'Test', model, test_images)
+predict_labels(VERSION, 'test', model, test_images)
 
 save_model_layers_to_file(VERSION, 'model.png', model)
