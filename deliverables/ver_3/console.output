@@ -1,0 +1,56 @@
+/usr/bin/python3 src/mnist.py
+Using TensorFlow backend.
+Using TensorFlow v1.12.0
+The number of occuranc of each number in the train set is {0: 5923, 1: 6742, 2: 5958, 3: 6131, 4: 5842, 5: 5421, 6: 5918, 7: 6265, 8: 5851, 9: 5949}
+
+The number of occuranc of each number in the test set is {0: 980, 1: 1135, 2: 1032, 3: 1010, 4: 982, 5: 892, 6: 958, 7: 1028, 8: 974, 9: 1009}
+
+Train on 60000 samples, validate on 60000 samples
+Epoch 1/20
+2018-11-23 19:41:29.717914: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+60000/60000 [==============================] - 136s 2ms/step - loss: 0.1970 - acc: 0.9389 - val_loss: 0.0493 - val_acc: 0.9848
+Epoch 2/20
+60000/60000 [==============================] - 140s 2ms/step - loss: 0.0560 - acc: 0.9831 - val_loss: 0.0284 - val_acc: 0.9907
+Epoch 3/20
+60000/60000 [==============================] - 161s 3ms/step - loss: 0.0385 - acc: 0.9882 - val_loss: 0.0182 - val_acc: 0.9944
+Epoch 4/20
+60000/60000 [==============================] - 162s 3ms/step - loss: 0.0288 - acc: 0.9909 - val_loss: 0.0155 - val_acc: 0.9952
+Epoch 5/20
+60000/60000 [==============================] - 162s 3ms/step - loss: 0.0227 - acc: 0.9934 - val_loss: 0.0100 - val_acc: 0.9972
+Epoch 6/20
+60000/60000 [==============================] - 162s 3ms/step - loss: 0.0198 - acc: 0.9940 - val_loss: 0.0068 - val_acc: 0.9980
+Epoch 7/20
+60000/60000 [==============================] - 165s 3ms/step - loss: 0.0160 - acc: 0.9952 - val_loss: 0.0051 - val_acc: 0.9985
+Epoch 8/20
+60000/60000 [==============================] - 155s 3ms/step - loss: 0.0130 - acc: 0.9957 - val_loss: 0.0063 - val_acc: 0.9979
+Epoch 9/20
+60000/60000 [==============================] - 120s 2ms/step - loss: 0.0114 - acc: 0.9964 - val_loss: 0.0034 - val_acc: 0.9989
+Epoch 10/20
+60000/60000 [==============================] - 115s 2ms/step - loss: 0.0086 - acc: 0.9972 - val_loss: 0.0037 - val_acc: 0.9989
+Epoch 11/20
+60000/60000 [==============================] - 115s 2ms/step - loss: 0.0093 - acc: 0.9971 - val_loss: 0.0047 - val_acc: 0.9986
+Epoch 12/20
+60000/60000 [==============================] - 120s 2ms/step - loss: 0.0088 - acc: 0.9973 - val_loss: 0.0027 - val_acc: 0.9992
+Epoch 13/20
+60000/60000 [==============================] - 121s 2ms/step - loss: 0.0074 - acc: 0.9978 - val_loss: 0.0029 - val_acc: 0.9992
+Epoch 14/20
+60000/60000 [==============================] - 122s 2ms/step - loss: 0.0078 - acc: 0.9975 - val_loss: 0.0016 - val_acc: 0.9995
+Epoch 15/20
+60000/60000 [==============================] - 126s 2ms/step - loss: 0.0055 - acc: 0.9983 - val_loss: 0.0019 - val_acc: 0.9994
+Epoch 16/20
+60000/60000 [==============================] - 121s 2ms/step - loss: 0.0076 - acc: 0.9977 - val_loss: 0.0013 - val_acc: 0.9996
+Epoch 17/20
+60000/60000 [==============================] - 121s 2ms/step - loss: 0.0060 - acc: 0.9983 - val_loss: 0.0016 - val_acc: 0.9995
+Epoch 18/20
+60000/60000 [==============================] - 121s 2ms/step - loss: 0.0064 - acc: 0.9980 - val_loss: 0.0018 - val_acc: 0.9994
+Epoch 19/20
+60000/60000 [==============================] - 120s 2ms/step - loss: 0.0039 - acc: 0.9988 - val_loss: 8.9070e-04 - val_acc: 0.9997
+Epoch 20/20
+60000/60000 [==============================] - 120s 2ms/step - loss: 0.0054 - acc: 0.9985 - val_loss: 0.0024 - val_acc: 0.9990
+Training time: 2686.188s
+60000/60000 [==============================] - 20s 339us/step
+Train loss: 0.00237
+Train accuracy: 99.90167%
+10000/10000 [==============================] - 3s 333us/step
+Test loss: 0.04271
+Test accuracy: 99.15000%

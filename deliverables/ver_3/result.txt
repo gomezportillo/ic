@@ -1,0 +1,5 @@
+Training time: 2686.188s
+Train loss: 0.00237
+Train accuracy: 99.90167%
+Test loss: 0.04271
+Test accuracy: 99.15000%

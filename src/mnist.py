@@ -40,11 +40,17 @@ test_labels = keras.utils.to_categorical(test_labels, num_classes)
 
 # Building the model
 model = keras.Sequential()
-model.add(keras.layers.Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=input_shape))
+model.add(keras.layers.Conv2D(32, kernel_size=(4, 4),
+                 activation=tf.nn.relu,
+                 input_shape=input_shape))
+model.add(keras.layers.Conv2D(64, (3, 3), activation=tf.nn.relu))
 model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
-model.add(keras.layers.Dropout(0.25))
+model.add(keras.layers.Dropout(0.2))
 model.add(keras.layers.Flatten())
-model.add(keras.layers.Dense(num_classes, activation='softmax'))
+model.add(keras.layers.Dense(248, activation=tf.nn.relu))
+model.add(keras.layers.Dense(124, activation=tf.nn.relu))
+model.add(keras.layers.Dropout(0.4))
+model.add(keras.layers.Dense(num_classes, activation=tf.nn.softmax))
 
 # Compiling the model
 model.compile(optimizer=keras.optimizers.Adam(),
@@ -52,7 +58,7 @@ model.compile(optimizer=keras.optimizers.Adam(),
               metrics=['accuracy'])
 
 # Train the model with the train images
-EPOCHS = 15
+EPOCHS = 20
 
 train_time_str = train_model(model, train_images, train_labels, EPOCHS)
 
@@ -63,7 +69,7 @@ train_loss_str, train_acc_str = evaluate_model('Train', model, train_images, tra
 test_loss_str, test_acc_str = evaluate_model('Test', model, test_images, test_labels)
 
 # Save results
-VERSION = 2
+VERSION = 3
 save_results(VERSION, train_time_str, train_loss_str, train_acc_str, test_loss_str, test_acc_str)
 
 # Predicting the labels of all train images
