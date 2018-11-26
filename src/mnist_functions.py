@@ -8,7 +8,7 @@ from keras.utils import plot_model
 
 def print_unique_numbers(TYPE, labels):
     unique, count= numpy.unique(labels, return_counts=True)
-    print("The number of occuranc of each number in the {} set is {}\n".format(TYPE, dict (zip(unique, count))))
+    print("The number of occurrence of each number in the {} set is {}\n".format(TYPE, dict (zip(unique, count))))
 
 
 def train_model(model, images, labels, EPOCHS):

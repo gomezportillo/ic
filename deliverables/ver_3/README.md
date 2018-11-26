@@ -38,7 +38,7 @@ He comprobado que si aumento las épocas, por ejemplo a 30, obtengo mejoroes res
 
 # Tasa de error sobre el conjunto de entrenamiento (%)
 
-0,0983%
+0.0983%
 
 # Tiempo de entrenamiento (en segundos)
 
