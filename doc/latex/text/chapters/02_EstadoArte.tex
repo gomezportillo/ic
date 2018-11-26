@@ -1,1 +1,76 @@
 \chapter{Estado del arte}
+\label{chap:art}
+
+Antes de elegir lenguaje de programación a usar se realizó una búsqueda de los frameworks para desarrollo de aplicaciones basadas en deep learning disponibles, y de este modo tener razones para poder justificar esta elección.
+
+\bigskip
+
+A continuación se presentan los frameworks más importantes que hay en el mercado.
+
+\section{Keras}
+
+Keras\footnote{\url{https://keras.io/}} es una librería de código abierto escrita en Python, diseñada específicamente para hacer experimentos con redes neuronales.
+
+\bigskip
+
+Lo interesante de este framework es que funciona como \textbf{front-end} de la librería que utilice por debajo, es decir, que redirige las llamadas a sus funciones a las de la librería con la que le digamos que trabaje. Keras puede ejecutarse sobre MXNet, DL4J, TensorFlow, o Theano, algunas de las que hablaremos más adelante.
+
+\section{Pytorch}
+
+Pytorch\footnote{\url{https://pytorch.org/}} es un framework para Python que permite el prototipado y desarrollo rápido de aplicaciones deep learning, especialmente centrado en la aceleración por GPU.
+
+\bigskip
+
+La característica principal de Pytorch es que utiliza grafos computacionales dinámicos por cuestiones de eficiencia y optimización, ya que según su API estos grafos se paralelizan especialmente bien en una tarjeta gráfica.
+
+\section{TensorFlow}
+
+TensorFlow\footnote{\url{https://www.tensorflow.org/}} es es un framework de código abierto desarrollado por Google que, según su página web, \textit{se utiliza para realizar cálculos numéricos mediante diagramas de flujo de datos; los nodos de los diagramas representan operaciones matemáticas y las aristas reflejan las matrices de datos multidimensionales (tensores) comunicadas entre ellas}.
+
+\bigskip
+
+Este framework trabaja a un nivel más bajo que Keras o Pytorch y, aunque es uno de los más populares y usados por empresas como Dropbox, su uso parece ser recomendado para proyectos más grandes y complejos que éste.
+
+\section{Scikit-learn}
+
+Scikit-learn\footnote{\url{https://scikit-learn.org/}} es un framework de código abierto escrita en Python utilizada por empresas como Spotify que, según su página web, es \textit{simple, eficiente y accesible, perfecta para para técnicas de análisis y minería de datos}. Está escrita sobre otras librerías de Python como \textit{NumPy}, \textit{SciPy}, y \textit{matplotlib}.
+
+\section{Theano}
+
+Theano\footnote{\url{http://www.deeplearning.net/software/theano/}} es un frameworks de bajo nivel, como TensorFlow, y es otro de los soportados por Keras. Según su página web permite \textit{definir, optimizar y evaluar expresiones matemáticas, especialmente las que trabajan con matrices multi-dimensionales}.
+
+\bigskip
+
+Aún así, Theano no está especialmente centrado en el deep learning, por lo que en lugar de usar esta librería tiene más sentido usar frameworks como Keras que se apoyen en el para realizar tareas de \textit{deep learning}.
+
+\section{Lasagne}
+
+Lasagne\footnote{\url{https://lasagne.readthedocs.io/}} es una librería escrita en Python que nació exclusivamente para permitir usar Theano en tareas de deep learning, y proporcionando una interfaz más amigable. Es una de las principales competidores de Keras, aunque parece no ser tan preferida como esta.
+
+\section{DSSTINE}
+
+DSSTINE\footnote{\url{https://github.com/amzn/amazon-dsstne}} (pronunciado \textit{destiny}), es un framework de código abierto desarrollado por Amazon especialmente pensado para entrenar y desplegar modelos de recomendación.
+
+\bigskip
+
+Además, únicamente permite ejecutarse sobre GPU, aunque permite hacerlo en paralelo usando varias. Por otro lado, su documentación es muy pobre y a veces es necesario bucear en su código fuente para entender qué hace.
+
+\section{MXNet}
+
+MXNet\footnote{\url{https://mxnet.incubator.apache.org/}} es una librería de uso general desarrollada por Apache. A pesar de asegurarse bastante potente parece estar en una fase muy verde.
+
+\section{DL4J}
+
+DeepLearning4J\footnote{\url{https://deeplearning4j.org/}} es una librería distribuida de código abierto escrita en Java y disponible para Java, Python y C++.
+
+\bigskip
+
+Según su página web, se especializa en redes neuronales profundas, y su documentación parece muy completa y está muy bien escrita.
+
+\section{Microsoft Cognitive Toolkit}
+
+CNTK\footnote{\url{https://www.microsoft.com/en-us/cognitive-toolkit/}} es una librería de código abierto desarrollada por Microsoft Research, la división de investigación de Microsoft que, según su página web, \textit{entrena algoritmos de deep learning para pensar como personas}.
+
+\bigskip
+
+A pesar de lo prometedor que parecía, no parece ser muy popular, ya que en comparación con el resto de frameworks no hay muchos ejemplos por la web, ni siquiera en páginas especializadas como Kaggle\footnote{\url{https://www.kaggle.com/}}.

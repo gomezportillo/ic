@@ -1,4 +1,4 @@
-# Basado en la documentación LaTeX de github.com/erseco
+# Basado en la plantilla LaTeX de github.com/erseco
 
 all: doc clean
 

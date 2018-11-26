@@ -1,0 +1,54 @@
+\chapter{Implementación}
+\label{chap:impl}
+
+Tras realizar el estudio acerca del estado del arte, y basándonos que necesitamos un framework centrado en deep learning que no necesite GPU para ejecutarse, se ha decidido utilizar el lenguaje de programación Python3 con el framework Keras con TensorFlow como back-end.
+
+\bigskip
+
+Cabe destacar que, aunque me hubiera parecido mucho más interesante programar la práctica desde 0, como se proponía en el guión, en lugar de utilizar una librería ya implementada, las restricciones de tiempo y esfuerzo a las que ha tenido que enmarcase esta práctica debido al resto de asignaturas han hecho que finalmente opte por utilizar una framework de desarrollo de aplicaciones \textit{deep learning}.
+
+\section{Framework y librerías utilizadas}
+
+A continuación se presentan los programas más importantes utilizados en esta práctica, así como su versión específica. Se han obviado las dependencias.
+
+\begin{itemize}
+  \item \textbf{Python 3.6.6}. Será el lenguaje de programación de la práctica.
+  \item \textbf{Keras 2.2.4}. Se utilizará como front-end para trabajar con TensorFlow, ya que actúa como interfaz facilitando su uso.
+  \item \textbf{TensorFlow 1.13.0}. Será el corazón de la aplicación
+  \item \textbf{Matplotlib 3.0.0}. e utilizará para visualizar el contenido de la base de datos MNIST.
+ \end{itemize}
+
+ \bigskip
+
+ \begin{figure}[H]
+ \centering
+ \includegraphics[width=0.6\textwidth]{../images/keras-ts}
+ \caption{Logos de Keras y TensorFlow}
+ \label{fig:logos-keras-ts}
+ \end{figure}
+
+ \bigskip
+
+Para instalar estas librerías usando el proyecto solo es necesario situarse en el directorio raíz y ejecutar \lstinline{make install}.
+
+\section{Detalles comunes de la implementación}
+
+A continuación se presentan la información de la implementación del proyecto. Primero se presentará la información común a todas las versiones del proyecto y a continuación se pasará a describir cada versión por separado. Los resultados detallados de cada versión pueden verse en el capítulo \ref{chap:concl}, mientras que aquí solo se presentará la configuración de cada una.
+
+\bigskip
+
+En total, este proyecto ha pasado por tres versiones, pero es necesario destacar que las versiones no son totalmente sucesivas, sino que entre ellas se realizaron varias subversiones probando diferentes configuraciones de épocas y capas, y no se decidía definir una nueva versión hasta obtener una mejoría suficiente.
+
+\bigskip
+
+Además, se ha utilizado un repositorio en GitHub para realizar el control de versiones de la pŕactica, cuya dirección es \url{https://github.com/gomezportillo/mnist}.
+
+\bigskip
+
+Al final de cada versión se ha publicado una release del proyecto, por lo que las tres versiones pueden verse en la correspondiente sección del repositorio.
+
+\bigskip
+
+Todas las versiones utilizan las mismas librerías, por lo que para probar cualquiera de ellas, y habiendo clonado previamente el repositorio e instalado las dependencias, bastaría con situarse en el directorio raiz y ejecutar \lstinline{git checkout vX.0}, donde  \lstinline{x} es la versión del proyecto, entre 1 y 3, a la que nos queremos mover, y escribir \lstinline{make} para ejecutar la práctica en dicha versión.
+
+\section{Primera versión}
