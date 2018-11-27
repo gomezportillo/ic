@@ -1,2 +1,32 @@
 \chapter{Resultados}
 \label{chap:res}
+
+A continuación se presentan los resultados detallados de las diferentes versiones del proyecto.
+
+\bigskip
+
+\section{Primera versión}
+
+Tras ejecutar la primera versión, cuya fase de entrenamiento duró \textbf{22.2 segundos}, obtuve los siguientes resultados, formateados en la tabla \ref{tab:v1}. La columna \textit{Época} indica a qué época del entrenamiento hacen referencia los resultados, la columna \textit{Loss} es un valor escalar que intentamos reducir a 0 y la columna \textit{Acierto} indica el porcentaje de aciertos que se han obtenido.
+
+\begin{table}[h]
+  \centering
+  \rowcolors{1}{white}{lightgray}
+  \begin{tabular}{llllll}
+    \tabheadformat
+    \tabhead{Época} & \tabhead{Loss} & \tabhead{Acierto}
+    \tabhead{Época} & \tabhead{Loss} & \tabhead{Acierto} \\
+    \hline
+    1     & 0.3603 & 0.9007  & 11    & 0.0271 & 0.9927  \\
+    2     & 0.1674 & 0.9526  & 12    & 0.0240 & 0.9939  \\
+    3     & 0.1205 & 0.9656  & 13    & 0.0209 & 0.9946  \\
+    4     & 0.0929 & 0.9736  & 14    & 0.0174 & 0.9958  \\
+    5     & 0.0750 & 0.9784  & 15    & 0.0149 & 0.9965  \\
+    6     & 0.0622 & 0.9819  &       &        &         \\
+    7     & 0.0524 & 0.9853  &       &        &         \\
+    8     & 0.0439 & 0.9877  &       &        &         \\
+    9     & 0.0375 & 0.9895  &       &        &         \\
+    10    & 0.0326 & 0.9911  &       &        &
+  \end{tabular}
+  \label{tab:v1}
+\end{table}
