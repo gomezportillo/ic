@@ -29,3 +29,9 @@ Currently obtaining a success rate of **99,9017%** using the test set (~85 error
 
 * `git checkout vX.0`, 1<=x<=3
 * `make`
+
+## Future work
+
+Implement in the project the appropriate functions for saving and loading the model once it is compiled basing on the following guides.
+
+* https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model
